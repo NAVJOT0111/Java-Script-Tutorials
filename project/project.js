@@ -26,9 +26,6 @@ const SYMBOL_VALUES = {
 };
 
 
-
-
-
 const deposit = () => {                                              // creating a function called deposit
     while (true){                                                                //here while statement is a loop
         const depositAmount = prompt("Enter a deposit amount: ");
@@ -48,7 +45,7 @@ const numberofLines = () => {
         const lines = prompt("Enter the number of lines to bet on (1-3): ");
         const numberofLines = parseFloat(lines);
 
-        if (isNaN(numberofLines) || numberofLines <= 0 || numberofLines <= 3){
+        if (isNaN(numberofLines) || numberofLines <= 0 || numberofLines >= 3){
             console.log("Invalid number of Lines, try again.");
         }
         else{
@@ -79,16 +76,74 @@ const spin = () => {
         }
     }
     
-    const reels = [[], [], []];
+    const reels = [];
+
     for (let i = 0; i < COLS; i++){
+        reels.push([]);
+        const reelSymbols = [...symbols];
         for (let j = 0; j < ROWS; j++){
-            
+            const randomIndex = Math.floor(Math.random() * reelSymbols.length);
+            const selectedSymbol = reelSymbols[randomIndex];
+            reels[i].push(selectedSymbol);
+            reelSymbols.splice(randomIndex, 1);
         }
     }
+
+    return reels;
 };
-spin();
+
+const transpose = (reels) => {
+    const rows = [];
+
+    for (let i = 0; i < ROWS; i++) {
+        rows.push([]);
+        for (let j = 0; j < COLS; j++) {
+            rows[i].push(reels[j][i]);
+        }
+    }
+    return rows;
+};
+
+const printRows = (rows) => {
+    for (const row of rows) {
+        let rowString = " ";
+        for (const [i, symbol] of row.entries()){
+            rowString += symbol;
+            if (i != row.length - 1) {
+                rowString += " | "
+            }
+        }
+        console.log(rowString);
+    }
+};
+
+const getWinnings = (rows, bet, lines) => {
+    let winnings = 0;
+
+    for (let row = 0; row = lines; row++) {
+       const symbols = rows[row];
+       let allSame = true;
+
+     for (const symbol of symbols) {
+             if (symbol != symbols[0]) {
+                allSame = false;
+                break;
+                }
+            };
+
+            if (allSame) {
+                winnings += bet * SYMBOL_VALUES[symbols[0]]
+            }
+           }
+
+    return winnings;
+};
 
 let balance = deposit();
 const getNumberofLines = numberofLines();
 const bet = getBet(balance, numberofLines);
-
+const reels = spin();
+const rows = transpose(reels);
+printRows(rows);
+const winnings = getWinnings(rows, bet, numberofLines);
+console.log("You won, $" + winnings.toString());
