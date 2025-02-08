@@ -5,6 +5,7 @@ html, body{
 
 .button{
     padding: 20px;
+    width: 66px;
     margin: 0 3px;
     border: 2px solid black;
     border-radius: 6px;
@@ -15,6 +16,8 @@ html, body{
     margin: 8px 0;
 }
 .row input{
+    width: 230px;
+    font-size: 20px;
     margin: 0;
     padding: 10px 38px;
     border: 2px solid black;
