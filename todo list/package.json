@@ -1,0 +1,24 @@
+{
+  "name": "js-basics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^4.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAVJOT0111/Java-Script-Tutorials.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NAVJOT0111/Java-Script-Tutorials/issues"
+  },
+  "homepage": "https://github.com/NAVJOT0111/Java-Script-Tutorials#readme"
+}
