@@ -1,0 +1,11 @@
+const pi = 3.14159
+let radius, circumference;
+
+radius = window.prompt('Enter the radius of the circle');
+
+document.getElementById("mySubmit").onclick = function(){
+    radius = document.getElementById("myText").value
+    radius = Number(radius);
+    circumference = 2 * pi * radius;
+    document.getElementById("myH3").textContent = circumference + "cm";
+}
