@@ -12,10 +12,13 @@
     font-size: 1.5em;
     color: white;
     background-color: hsl(214, 100%, 74%);
+<<<<<<< HEAD
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.25s ;
 }
 .buttons:hover{
     background-color: hsl(214, 100%, 56%); 
+=======
+>>>>>>> ee4d140894f4bd9aab781f2b53340dc13929751a
 }
