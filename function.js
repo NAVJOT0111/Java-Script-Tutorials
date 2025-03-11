@@ -1,77 +1,71 @@
- HEAD
-// function call or invoke
-run();
+function sayMyName(){
+    console.log("N");
+    console.log("A");
+    console.log("V");
+    console.log("J");
+    console.log("O");
+    console.log("T");
+}
+// sayMyName() ;
 
-//function declaration
-function run(){
-    console.log('running');              //we can declare function even before or after it
+// function addition(num1,num2){               // num1 and num2 is called parameter
+//     console.log(num1 + num2);
+// }
+// addition(3,4);                          // here, 3 & 4 while function calling is called arguements
+// addition(3,"4");
+// const result = addition(3,"a");             // storing the result into a variable
+// addition(3,null);
+
+// console.log("Result: ", result);            // undefined becase we didn't returned the function
+
+
+function addition(num1,num2){               
+    return num1 + num2 ;
+    // lines written after return are not executed
 }
 
-//named function assignment
-let stand = function walk() {
-    console.log('walking');
-}
-
-// Anonymous function assignment
-// let stand2 = function {
-//     console.log('walking');
+// function loginMessage(username = "sam"){     // we gave username a minimum value
+//     return `${username} just logged in` ;
 // }
 
-stand();      //if we are creatiing a function by function assignment method, then function call should be made after it
+// // loginMessage("Navjot");                 // we returned the value but didn't print it or store it in any variable
+// console.log(loginMessage("Navjot"));
+// console.log(loginMessage(""));
+// console.log(loginMessage());                // undefined
 
-let jump = stand;
-jump();
-
-
-function sum(a,b){
-    // let total = 0;
-    // for (let value of arguements)
-    //     total = total + value;
-    // return total;
-    return a+b;
+function loginMessage(username){
+    if(username === undefined){                          // or if(!username)
+        console.log("Please enter a username");
+        return ;
+    }
+    return `${username} just logged in` ;
 }
-
-console.log(sum(1,2));     // returns 3
-console.log(sum(1));          // returns NaN
-console.log(sum());             // returns NaN
-console.log(sum(1,2,3,4,5));    // returns 3
+// console.log(loginMessage()); 
 
 
-// function call or invoke
-run();
-
-//function declaration
-function run(){
-    console.log('running');              //we can declare function even before or after it
-}
-
-//named function assignment
-let stand = function walk() {
-    console.log('walking');
-}
-
-// Anonymous function assignment
-// let stand2 = function {
-//     console.log('walking');
+// function calculateCartPrice(...num1){
+//     return num1 ;
 // }
+// console.log(calculateCartPrice(200,300,500,2000));           // we've to use rest operator for it
 
-stand();      //if we are creatiing a function by function assignment method, then function call should be made after it
+function calculateCartPrice(val1,val2,...num1){
+    return num1 ;
+}
+console.log(calculateCartPrice(200,300,500,2000));
 
-let jump = stand;
-jump();
 
-
-function sum(a,b){
-    // let total = 0;
-    // for (let value of arguements)
-    //     total = total + value;
-    // return total;
-    return a+b;
+const user = {
+    username: "nav",
+    price: 999
 }
 
-console.log(sum(1,2));     // returns 3
-console.log(sum(1));          // returns NaN
-console.log(sum());             // returns NaN
-console.log(sum(1,2,3,4,5));    // returns 3
+function handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
+}
 
- 23c79649f520edc8f9dce5fbe3c084143c1a04a4
+handleObject(user);
+
+handleObject({                          // passing an object directly
+    username: "sam",
+    price: 399
+})
