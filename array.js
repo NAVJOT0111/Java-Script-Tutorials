@@ -1,149 +1,41 @@
- HEAD
-// insertion of any new item
-let numbers = [1,4,2,7];
-console.log(numbers);
-numbers.push(9);
-console.log(numbers);
-numbers.unshift(8);
-console.log(numbers);
-numbers.splice(2,0,'a','b');
-console.log(numbers);
+// // same as lists in pythin
+// /// array copy operations create shallow copy
 
-// // searching any item
-// console.log(numbers.indexOf(10));
+// const myArr = ["Thor", "Iron man", "spider man"]
+// const arr2 = new Array(1,2,3,4,"N")                         // new keyword makes it an object
 
-// // check if a number exists in an array
+// // console.log(myArr[0]);
 
-// // -1 is often used to indicate "not found" or "an invalid index.
-// if (numbers.indexOf(10) != -1)
-//     console.log("present");
+// myArr.push(6);                          // adding element
+// // console.log(myArr);
 
-// console.log(numbers.includes(7)) ;
+// myArr.pop();
+// myArr.unshift(9);               // adding element at the start 
+// myArr.shift();                  // removing the first element
+// // console.log(myArr.includes(9));
+// // console.log(myArr.indexOf(9));
 
-// // numbers.indexOf(ClipboardItem, index to start our search from )
-// numbers.indexOf(4,2);
+// const newArr = myArr.join();
+// // console.log(newArr);
+// // console.log(typeof newArr);
 
-let courses = [
-    {no:1, name:'Love'},
-    {no:2, name:'Babbar'}
-]
-// console.log(courses);
-
-// console.log(courses.indexOf({no:1, name:'Love'}));  //-1 because they both are not the same
-
-// let course = courses.find(function(course){
-//     return course.name == 'Love';
-// });
-// console.log(course);
-
-let course = courses.find(course => course.name === 'kavish');
-console.log(course);
+// // slice, splice
+// console.log("A ", myArr);
+// const myn1 = myArr.splice(1,3);
+// // const myn1 = myArr.slice(1,3);
 
 
-let n1 = [1,2,3,4,5,6,7];
-//end
-n1.pop();
-//beginning
-n1.shift();
-//middle
-n1.splice(2,1);
-console.log(n1);
-
-// let arr1 = [1,2,3];
-// let arr2 = [4,5,6];
-// let X = arr1.concat(arr2);
-// console.log(X);
-// let Y = X.slice(2,4);
-// console.log(Y);
-// let Z = X.slice();           //clones the entire array
-// console.log(Z);
-
-// let arr1 = [1,2,3];
-// let arr2 = [4,5,6];
-// let X = [...arr1, ...arr2];
-// console.log(X);
-
-// let message = 'This is my first message';
-// let parts = message.split(' '); 
-// console.log(parts);
-
-let num = [7,8,9,10];
-let items = num.map(function(value){
-    return 'student_no' + value;
-});
-console.log(items);
-
-//insertion of any new item
-let numbers = [1,4,2,7];
-console.log(numbers);
-numbers.push(9);
-console.log(numbers);
-numbers.unshift(8);
-console.log(numbers);
-numbers.splice(2,0,'a','b');
-console.log(numbers);
-
-// //searching any item
-// console.log(numbers.indexOf(10));
-
-// //check if a number exists in an array
-
-// // -1 is often used to indicate "not found" or "an invalid index.
-// if (numbers.indexOf(10) != -1)
-//     console.log("present");
-
-// console.log(numbers.includes(7));
-
-// // numbers.indexOf(ClipboardItem, index to start our search from )
-// numbers.indexOf(4,2);
-
-let courses = [
-    {no:1, name:'Love'},
-    {no:2, name:'Babbar'}
-]
-// console.log(courses);
-
-// console.log(courses.indexOf({no:1, name:'Love'}));  //-1 because they both are not the same
-
-// let course = courses.find(function(course){
-//     return course.name == 'Love';
-// });
-// console.log(course);
-
-let course = courses.find(course => course.name === 'kavish');
-console.log(course);
+// console.log(myn1);
+// console.log("B ", myArr);
 
 
-let n1 = [1,2,3,4,5,6,7];
-//end
-n1.pop();
-//beginning
-n1.shift();
-//middle
-n1.splice(2,1);
-console.log(n1);
+// ----------------------------------------------------------array2-------------------------------------------------------------------
+const marvel = ["thor", "ironman","spiderman"]
+const dc = ["superman", "flash", "batman"]
 
-// let arr1 = [1,2,3];
-// let arr2 = [4,5,6];
-// let X = arr1.concat(arr2);
-// console.log(X);
-// let Y = X.slice(2,4);
-// console.log(Y);
-// let Z = X.slice();           //clones the entire array
-// console.log(Z);
+// marvel.push(dc);                     // will add array as a single element
+console.log(marvel);
+marvel.push(...dc);                     // will combine elements of both arrays into one array
 
-// let arr1 = [1,2,3];
-// let arr2 = [4,5,6];
-// let X = [...arr1, ...arr2];
-// console.log(X);
-
-// let message = 'This is my first message';
-// let parts = message.split(' '); 
-// console.log(parts);
-
-let num = [7,8,9,10];
-let items = num.map(function(value){
-    return 'student_no' + value;
-});
-console.log(items);
- 23c79649f520edc8f9dce5fbe3c084143c1a04a4
+marvel.concat(dc);                      //The .concat() method creates a new array by concatenating marvel with dc but does not modify the original marvel array.
+console.log(marvel);
