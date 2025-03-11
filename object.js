@@ -1,43 +1,42 @@
- HEAD
-console.log('Hello ji');
+// objects declared in two ways: literals and constructors
+// singleton : when object is made from constructor, such as: "Object.create"
 
-let lastName = 'Babbar';
-let firstName = new String('Love');
+// object literals : singleton object nahi banega
 
-let message = 'This is my first message';
-let words = message.split(' ');
-console.log(words);
+const mySym = Symbol("key1");
 
-let msg = `This is 
-        a ' "template
-        literal `;
-console.log(msg);
+const Jsuser = {
+  name: "Navjot",
+  "full name": "Navjot Ghotra",
+  // mySym : "myKey1",                           // here we are trying to use it as a symbol but the return dt is string, therefore we declare symbols in a asquare bracket
+  [mySym]: "myKey1",
+  Age: 18,
+  location: "Kpt",
+  email: "Navjotk@google.com",
+  isLoggedin: false,
+  lastLogindays: ["Monday", "Saturday"],
+};
 
-let date = new Date();
-console.log(date);
+// console.log(Jsuser.email);
+// console.log(Jsuser["full name"]);
 
-let date2 = new Date('June 20 1998 07:18');
-console.log(date2);
+// to overwrite the values of object
+Jsuser.location = "New York";
 
+// Object.freeze(Jsuser); // chnages made after that will not be propagated, we cann't chnage the values of object after this
 
-console.log('Hello ji');
+// console.log(Jsuser);
 
-let lastName = 'Babbar';
-let firstName = new String('Love');
+Jsuser.greeting = function () {
+  console.log("Hello Js user");
+};
 
-let message = 'This is my first message';
-let words = message.split(' ');
-console.log(words);
+console.log(Jsuser.greeting);                               // [Function (anonymous)]
+console.log(Jsuser.greeting());                              // Hello Js user
 
-let msg = `This is 
-        a ' "template
-        literal `;
-console.log(msg);
+// name refrence in function
 
-let date = new Date();
-console.log(date);
-
-let date2 = new Date('June 20 1998 07:18');
-console.log(date2);
-
-23c79649f520edc8f9dce5fbe3c084143c1a04a4
+Jsuser.greetingTwo = function(){
+    console.log(`Hello Js user, ${this.name}`);
+};
+console.log(Jsuser.greetingTwo());   
