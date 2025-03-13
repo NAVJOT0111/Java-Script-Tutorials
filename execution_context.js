@@ -1,0 +1,1 @@
+// execution context means js ch jo v file banai a onu run kive karegi te execute kive karegi
